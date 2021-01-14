@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Table from './Table';
 import Form from './Form';
-import Axios from 'axios';
 import axios from 'axios';
 
 function MyApp() {
@@ -44,7 +43,7 @@ function MyApp() {
     function updateList(person) {
         makePostCall(person).then( result => {
             if (result.status === 201)
-                setCharacters([...characters, person]);
+                setCharacters([...characters, result.data]);
         });
     }
 
